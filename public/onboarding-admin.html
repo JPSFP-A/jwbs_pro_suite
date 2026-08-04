@@ -1700,8 +1700,8 @@ function adminApp() {
       this.pinSaving = false;
     },
 
-    formatBytes(b) { if(!b) return ''; if(b<1024) return b+' B'; if(b<1048576) return (b/1024).toFixed(1)+' KB'; return (b/1048576).toFixed(1)+' MB'; },
-    formatDate(ts) { return ts ? new Date(ts).toLocaleDateString('en-JM',{day:'numeric',month:'short',year:'numeric'}) : ''; },
+    formatBytes(b) { return window.formatBytes(b); },
+    formatDate(ts) { return window.formatDate(ts); },
     formatDateShort(d) { return d ? new Date(d+'T00:00:00').toLocaleDateString('en-JM',{day:'numeric',month:'short'}) : ''; },
     logout() { sessionStorage.removeItem('ob_admin'); this.authed=false; this.pin=''; },
   };
